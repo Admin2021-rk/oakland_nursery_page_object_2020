@@ -4,7 +4,7 @@ require 'data_magic'
 
 World(PageObject::PageFactory)
 
-
+# Different environments
 # oakland_test = 'www.oaklandtest.com'
 # oakland_int = 'www.oaklandint.com'   #---integration Environments
 # oakland_qa = 'www.oaklandqa.com'
