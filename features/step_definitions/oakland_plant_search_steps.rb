@@ -69,7 +69,7 @@ And(/^verify the header details of the plant$/) do |table|
   # table is a table.hashes.keys # => [:plant_details]
   actual_plant_details = on(OakPlantSearchPage).get_plant_info
   expected_plant_details = {}
-  table.hashes.each do |plant|
+  table.hashes.each_key do |plant|
     header_found = false
     actual_plant_details.each_key do |each_header|
       if each_header.include? plant['plant_details']

@@ -1,11 +1,14 @@
+@plant_search
 Feature: Oakland Plant Search
 
+  @smoke
   Scenario: verify the user can search for the plant
     Given user is on plant search page
     When user search for the plant Rose
     Then user should see the results related to Rose
     And verify the search results count is not more than 10
 
+  @regression
   Scenario Outline: verify the user can search for the different plant
     Given user is on plant search page
     When user search for the plant <plant_name>
@@ -15,8 +18,10 @@ Feature: Oakland Plant Search
     Examples:
       | plant_name | no_of_results |
       | Rose       | 10            |
-      | Sunflower  | 10            |
+      | Sunflower  | 15            |
 
+
+  @jira-345
   Scenario Outline: verify the user can search for the different plant with details
     Given user is on plant search page
     When user search for the plant <plant_name>
@@ -89,11 +94,15 @@ Feature: Oakland Plant Search
       | Spread        | 24 inches   |
       | Sunlight      | full sun    |
 
-Scenario: verify the yml test data functionality
-  When user verifies data can be read from yml file
+  Scenario: verify the yml test data functionality
+    When user verifies data can be read from yml file
 
   Scenario: verify the plant search details - Plant Type, Plant Height, Flower Height, Spreed and sunlight are correct using yml
     Given user is on plant search page
     When user search for the plant Rose
     Then user should see the results related to Rose
     And verify the details of the Rose are correct
+
+  @wip
+  Scenario: to do test
+    When mmmmm
