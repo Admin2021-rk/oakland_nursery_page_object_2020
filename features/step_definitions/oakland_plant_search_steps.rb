@@ -72,7 +72,7 @@ And(/^verify the header details of the plant$/) do |table|
   table.hashes.each_key do |plant|
     header_found = false
     actual_plant_details.each_key do |each_header|
-      if each_header.include? plant['plant_details']
+      if each_header[key].include? plant['plant_details']
         header_found = true
         break
       end
