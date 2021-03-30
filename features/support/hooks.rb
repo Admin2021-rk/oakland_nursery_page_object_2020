@@ -9,12 +9,3 @@ end
 After do
   @browser.close
 end
-
-After do |scenario|
-  SCREENSHOTS_DIRECTORY = "html-report"
-  if scenario.failed?
-    screenshot = "#{Time.now.strftime("%m-%d_%H-%M-%S")}#{scenario.name.gsub(' ','_').gsub(/[^0-9A-Za-z_]/, '')}.png"
-    @browser.driver.save_screenshot(File.join(SCREENSHOTS_DIRECTORY, screenshot))
-    embed(File.join(SCREENSHOTS_DIRECTORY, screenshot), "image/png", "SCREENSHOT")
-  end
-end
